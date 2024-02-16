@@ -1,0 +1,64 @@
+@use 'sass:math';
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+$baseFontSize: 16px;
+
+$fontFamily: "Plus Jakarta Sans";
+$fontSize: 18;
+
+$mainColor: #545971;
+$darkColor: #171921;
+$bgColor: #142257;
+$bgColorSemi: #1F3584;
+$bgColorLite: #15B2F5;
+
+$maxWidthContainer: 1430;
+$containerPadding: 30;
+
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+$maxWidth: 1920;
+$minWidth: 375;
+
+// Чуйна властивість
+@mixin adaptiveValue($property, $maxSize, $minSize, $keepSize: 0, $widthFrom: $containerWidth, $widthTo: $minWidth) {
+    #{$property}: calc(($minSize * 1px) + ($maxSize - $minSize) * ((100vw - $widthTo * 1px) / ($widthFrom - $widthTo)));
+}
+
+// Пікселі в реми
+@function toRem($value) {
+    @return calc(($value * 1px) / $baseFontSize * 1rem);
+}
+
+// Реми в пікселі
+@function toPx($value) {
+    @return calc($value * $baseFontSize);
+}
+
+// Чуйний контейнер
+$responsiveType: 1;
+
+@if ($responsiveType==1) {
+    [class*="__container"] {
+        @if ($maxWidthContainer>0) {
+            max-width: toRem($containerWidth);
+            margin: 0 auto;
+        }
+        @if ($containerPadding>0) {
+            @if($containerWidth>0) {
+                padding: 0 toRem(math.div($containerPadding, 2));
+            } @else {
+                @include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
+                @include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);
+            }
+        }
+    }
+}
+
+@import '_nullStyle';
+@import '_header';
+@import '_common';
+
+body {
+    @include adaptiveValue("font-size", $fontSize, 16);
+}
