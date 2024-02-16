@@ -1,0 +1,58 @@
+.footer {
+    max-width: 100%;
+    background-color: #222F33;
+    &__row {
+        max-width: 64.2857rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 2.36rem 1rem 2.36rem 1rem;
+
+        @media (max-width: 550px) {
+            padding: 1rem 1rem 1rem 1rem;
+            flex-direction: column;
+        }
+    }
+
+    &__gmail {
+        color: #FFF;
+        font-family: Rubik;
+        font-size: 0.85714rem;
+        font-weight: 500;
+        opacity: 0.6;
+        @media (max-width: 550px) {
+            order: 1;
+        }
+    }
+
+    &__logo {
+    }
+
+    &__links {
+        font-family: Rubik;
+        font-size: 0.85714rem;
+        font-weight: 500;
+        opacity: 0.6;
+        text-align: right;
+        color: #FFF;
+
+        @media (max-width: 550px) {
+            padding: 0.5rem 0;
+        }
+        
+    }
+
+    &__cokies {
+        color: #FFF;
+        
+    }
+
+    &__privacy {
+        color: #FFF;
+        padding: 0 0 0 2.14rem ;
+        @media (max-width:550px) {
+            padding: 0 0 0 1rem;
+        }
+    }
+}

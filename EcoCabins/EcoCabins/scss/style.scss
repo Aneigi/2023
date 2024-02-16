@@ -1,0 +1,337 @@
+@import '_nullstyle';
+@import '_header';
+@import '_footer';
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&family=Rubik:wght@400;500&display=swap');
+
+.ibg{
+    background-position: center; background-size: cover; background-repeat: no-repeat; position: relative;
+}
+
+.ibg img {
+    width: 0; height: 0; top: 0; left: 0; position: absolute; opacity: 0; visibility: hidden;
+}
+
+.container {
+    max-width: 58rem;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+body {
+    background-color: #FFF;
+}
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+
+}
+.page {
+    flex: 1 1 100%;
+}
+
+.main-screen {
+    
+
+    &__content {
+        padding:6rem 0 0 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
+    &__body {
+        color: #FFF;
+    }
+
+    &__lable {
+        font-family: Rubik;
+        font-size: 1.14286rem;
+        font-weight: 500;
+    }
+
+    &__title {
+        padding: 0.86rem 0 0 0;
+        max-width: 31.428rem;
+        font-family: Merriweather;
+        font-size: 2.14286rem;
+        font-weight: 900;
+    }
+
+    &__video {
+        margin: 0 0 0 9.43rem;
+        display: flex;
+        align-items: center;
+        color: #FFF;
+        font-family: Rubik;
+        font-size: 0.85714rem;
+        font-weight: 500;
+        img {
+            margin: 0 0.71rem 0 0;
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    @media(max-width:650px) {
+        &__lable {
+            font-size: 1rem;
+        }
+        &__title {
+            font-size: 1.7rem;
+        }
+    }
+
+    @media(max-width:900px) {
+        &__content {
+            flex-direction: column;
+            justify-content: center;
+        }
+        &__body {
+            margin: 0 0 10rem 0;
+            text-align: center;
+        }
+        &__video {
+            margin: 0 0 0 0;
+        }
+    }
+}
+
+.materials {
+    &__content {
+        display: grid;
+        grid-template-columns: repeat((2,1fr));
+        gap: 1.42rem;
+
+        min-width: 0;
+
+        @media (max-width:850px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat((2,1fr));
+        }
+    }
+
+    &__container {
+        @media (max-width: 400px) {
+            padding: 0;
+        }
+    }
+
+    &__body {
+        background-color: #FFF;
+        max-height: 28.5rem;
+        padding: 4.43rem 0 4.07rem 0;
+
+        @media(max-width:420px) {
+            padding: 1rem;
+        }
+    }
+
+
+
+    &__title {
+        color: #222F33;
+        font-family: Merriweather;
+        font-size: 2.14286rem;
+        font-weight: 900;
+
+    }
+
+    &__text {
+        
+        padding: 0.93rem 0;
+        color: #646D70;
+        font-family: Rubik;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.85714rem;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 6.42857rem;
+        height: 2.42857rem;
+        border-radius: 0.3rem;
+        border: 1px solid #606B74;
+
+        color: #606B74;
+        font-family: Rubik;
+        font-size: 0.85714rem;
+        font-weight: 500;
+    }
+
+    &__swiper {
+        transform: translateY(-20%);
+        max-width: 23.21429rem;
+        max-height: 26.14286rem;
+        
+        @media (max-width:700px) {
+            transform: translateY(-10%);
+        }
+        @media (max-width:430px) {
+            transform: translateY(0);
+        }
+        @media (max-width:343px) {
+            transform: translateY(6%);
+            max-width: 20.21429rem;
+            max-height: 23.14286rem;
+        }
+    }
+
+    &__slide {
+        
+        img {
+            aspect-ratio: 23.21429rem/26.14286rem;
+            object-fit: cover;
+        }
+
+    }
+
+    &__pagination {
+    }
+
+    &__wrapper {
+    }
+
+
+
+}
+
+.innovatie {
+    position: relative;
+    z-index: -1;
+    background: #222F33;
+   
+    &__content {
+        &::after{
+            position:absolute;
+            left: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+        }
+    }
+
+    &__container {
+    }
+
+    &__body {
+        padding: 5rem 0 5.79rem 0;
+        @media (max-width: 650px) {
+            padding: 2.5rem 0 2.5rem 0;
+        }
+    }
+
+    &__block {
+        position: absolute;
+        right: 0;
+        top: -10rem;
+        width: 27.43rem;
+        height: 10rem;
+        background-color: #222F33;
+
+        @media (max-width: 600px) {
+            display: none;
+        }
+    }
+
+    &__title {
+        font-family: Merriweather;
+        font-size: 2.14286rem;
+        font-weight: 900;
+        color: #FFF;
+    }
+
+    &__text {
+        padding: 0.57rem 0 0 0;
+        column-count: 2;
+        gap: 3.07rem;
+        break-inside: avoid;
+
+        font-family: Rubik;
+        font-size: 1rem;
+        color: #fff;
+        font-weight: 400;
+        opacity: 0.7;
+        line-height: 1.71429rem;
+        @media(max-width: 650px) {
+            column-count: 1;
+            p {
+                padding: 1rem 0 0 0;
+            }
+        }
+    }
+}
+
+.characteristics {
+    &__content {
+        display: flex;
+    }
+
+    &__container {
+        padding: 4rem 0;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 5.36rem;
+        width: 100%;
+
+        @media (max-width:750px) {
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows:repeat(2,1fr);
+            grid-gap: 2rem;
+            padding: 0 0 2rem 0;
+        }
+    }
+
+    &__img {
+        
+        img {
+            
+            padding: 50%;
+        }
+    }
+
+    &__grid {
+    }
+}
+.grid {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    &__body {
+        max-width: 11.07143rem;
+    }
+
+    &__title {
+        font-size: 1.28571rem;
+        font-weight: 900;
+        color: #222F33;
+    }
+
+    &__text {
+        padding: 0.29rem 0 0 0;
+        font-family: Rubik;
+        font-size: 0.85714rem;
+        font-weight: 400;
+        line-height: 1.57143rem;
+        color: #646D70;
+    }
+
+    @media (max-height: 750px) {
+            
+    }
+}
+

@@ -1,0 +1,145 @@
+.header {
+    margin: 3.18rem 0 0 1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.menu {
+    
+    &__icon {
+    }
+
+    &__logo {
+        margin: 0 0 0.35rem 0;
+    }
+    
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 700px) {
+            position: fixed;
+            z-index: 7;
+            left: 0;
+            top: 0;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            background-color: #222F33;
+            justify-content: center;
+            transform: translateY(-100%);
+            transition-duration: 0.5s, 1.5s;
+            overflow: auto;
+            transition-timing-function: ease, ease-out;
+            &.active {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+    &__link:hover {
+        transform: scale(1.2);
+    }
+    &__link {
+        display: flex;
+
+        margin: 0 1.43rem 0 1.43rem;
+        font-size: 1rem;
+        font-family: Rubik;
+        font-weight: 500;
+        text-align: center;
+        color: #FFF;
+    }
+
+    &__contact {
+        justify-content: center;
+        align-items: center;
+        width: 6.42857rem;
+        height: 2.42857rem;
+        background-color: white;
+        color: #606B74;
+        border-radius: 0.37rem;
+    }
+}
+
+@media (max-width:700px) {
+    .menu__logo {
+        padding: 45px 0;
+        transform: scale(1.35);
+    }
+    .menu__list {
+        flex-direction: column;
+        flex: 1 1 100%;
+    }
+
+    .menu__link {
+        font-size: 20px;
+        margin: 2rem 0 0 0;
+    }
+
+    .icon-menu {
+        display: block;
+        position: fixed;
+        top: 3.6rem;
+        right: 20px;
+        width: 30px;
+        height: 18px;
+        cursor: pointer;
+        z-index: 8;
+        &::before,
+        &::after,
+        span {
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #222F33;
+        }
+        
+        span {
+            transition: all 0.3s ease 0s;
+            top: 8px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #222F33;
+        }
+        
+        &::before,
+        &::after {
+            content: '';
+        }
+        
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        
+        &.active {
+            span {
+                background-color: white;
+                transform: scale(0);
+                &:first-child {
+                    transform: rotate(-45deg);
+                    top: 8px;
+                }
+                &:last-child {
+                    transform:rotate(45deg);
+                    bottom: 8px;
+                }
+            }
+            &::before,
+            &::after {
+               content: none;
+            }
+        }
+    }
+}
